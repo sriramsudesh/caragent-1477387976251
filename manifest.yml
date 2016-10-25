@@ -1,15 +1,10 @@
 applications:
-- services:
-  - car-agent
   host: caragent
   disk: 512M
-  name: botstarter
+  name: caragent
   command: node app.js
   path: .
   domain: mybluemix.net
   memory: 512M
   instances: 1
-declared-services:
-  conversation-bot:
-    label: conversation
-    plan:  free
+
