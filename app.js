@@ -9,11 +9,11 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-const appSecret =  "98ad4368d5bfedd2fec8f64bbe24875f" ;
-const token = "EAAKQ4NzIUlgBAFyEFoShaHVM2SR04TKEljf4xDZCcEb9T0yjQVhuwAG3T4CjiAEGQ9EyyVTZCSbLgmkI2cN1eaWciu9mfDmUzJwYn2usrmmRPGi4fXq6VrnqBHQ03JOQQEpTwxaDET0lgPTSfHK8TePpw5TkvwvFiXCHqFxAZDZD";
+const appSecret =  "d13cb86dd7ec1627cbe8a9c714a7aec6" ;
+const token = "EAAS41pkZC8EoBALpHXm4riF19mgxmkuHKAz0yfwi0ooNjaDzGGJeuPQX1ryFozjLZCTv0oVADmEJoVmj8gOi3sVFwaSR0YwyuJlttWgYwYppl01naEU56xMTMFhErc8mfcTnL0BGpGiJMOTy8FtKguZCjZBZCy92ET6aq9bmuqgZDZD";
 
 const validationToken= "facebookpassword";
-const serverURL= "https://www.facebook.com/Askmeanything-213004629169154/";
+const serverURL= "https://www.facebook.com/Carinsurance-1853412431606434/";
 //var token = "Replace with the access token from Facebook";
 
     
@@ -26,3 +26,13 @@ app.get('/webhook/', function (req, res) {
     res.send('Error, wrong validation token');
 })
 
+app.get('/', function (req, res) {
+    
+    res.send('facebook webhook setup !');
+})
+
+var host = (process.env.VCAP_APP_HOST || 'localhost');
+var port = (process.env.VCAP_APP_PORT || 3000);
+app.listen(appEnv.port, port, function() {
+    console.log("server starting on " + appEnv.url);
+});
