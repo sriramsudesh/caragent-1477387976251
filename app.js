@@ -33,6 +33,6 @@ app.get('/', function (req, res) {
 
 var host = (process.env.VCAP_APP_HOST || 'localhost');
 var port = (process.env.VCAP_APP_PORT || 3000);
-app.listen(appEnv.port, port, function() {
-    console.log("server starting on " + appEnv.url);
+app.listen(port,host, function() {
+    console.log("server starting on" + "http://localhost:3000");
 });
